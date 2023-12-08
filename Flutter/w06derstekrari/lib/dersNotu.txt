@@ -1,0 +1,26 @@
+Widget=araç,gereç,kullanılan malzeme demek
+
+Widget Hiyerarşisi 
+
+                         MyApp
+                           |
+                           |
+                       MaterialApp
+                           |
+                           |
+                       MyHomePage
+                           |
+                           |
+                        Scoffold = İskele Demek
+                           |
+     |---------------------|---------------------------|
+     |                     |                           |
+   AppBar                Center                  Floating Action
+     |                     |                         Button
+     |                     |                           |
+    Text                  Column                      Icon
+                            |                   
+                 |-----------|------------|       
+                 |                        |
+               Text                      Text
+                                    
