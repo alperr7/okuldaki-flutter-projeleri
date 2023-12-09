@@ -1,41 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:w06derstekrari/01_noncontainer_widgets.dart';
+import 'package:w06derstekrari/02_container_widgets.dart';
 
-void main() {
-  runApp(Giris()); // aldığı methodun içindeki build metodu tetikler
-}
-
-class Login extends StatelessWidget {
-  const Login({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Hello World"),
-          backgroundColor: Colors.blue,
-        ),
-        body: Text(
-          "Loginekranı",
-          style: TextStyle(fontSize: 25),
-        ),
-      ),
-    );
-  }
-}
-
-class Giris extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.grey,
-        appBar: AppBar(
-          title: Text("Giris"),
-          backgroundColor: Colors.red,
-        ),
-        body: Giris(),
-      ),
-    );
-  }
+void main(List<String> args) {
+  runApp(Sayfa2());
 }
