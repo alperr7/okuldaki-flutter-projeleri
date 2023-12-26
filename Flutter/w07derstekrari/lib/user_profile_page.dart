@@ -7,6 +7,7 @@ class MyAppUserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "User Profile",
       theme: ThemeData(primaryColor: Colors.blue),
       home: UserProfileScreen(),
