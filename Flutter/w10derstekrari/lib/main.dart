@@ -3,6 +3,9 @@ import 'package:w10derstekrari/assets_example.dart';
 import 'package:w10derstekrari/card_example.dart';
 import 'package:w10derstekrari/context_example.dart';
 import 'package:w10derstekrari/dopdown_menu_example.dart';
+import 'package:w10derstekrari/grid_view_example.dart';
+import 'package:w10derstekrari/list_view_example.dart';
+import 'package:w10derstekrari/list_view_example_student.dart';
 import 'package:w10derstekrari/popup_menu_example.dart';
 
 void main() {
@@ -20,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const CardExample(),
+      home: const GridViewExampleForStudent(),
     );
   }
 }
