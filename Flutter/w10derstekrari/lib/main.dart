@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:w10derstekrari/assets_example.dart';
+import 'package:w10derstekrari/card_example.dart';
 import 'package:w10derstekrari/context_example.dart';
 import 'package:w10derstekrari/dopdown_menu_example.dart';
 import 'package:w10derstekrari/popup_menu_example.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const PopupMenuExample(),
+      home: const CardExample(),
     );
   }
 }
