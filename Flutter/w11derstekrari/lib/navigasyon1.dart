@@ -6,7 +6,13 @@ class Navigasyon1MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home")),
+      appBar: AppBar(
+        title: Text(
+          "Home",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.deepPurple,
+      ),
       body: Center(
         child: ElevatedButton(
             onPressed: () async {
@@ -16,40 +22,43 @@ class Navigasyon1MainPage extends StatelessWidget {
                   return Navigasyon1Page1(userId);
                 },
               ));
-              print(responsedData.toString() + ": Retricved");
+
+              print(responsedData.toString() + ": Retrived");
+
               ScaffoldMessenger.of(context)
                   .showSnackBar(SnackBar(content: Text(responsedData)));
             },
-            child: Text("Goto page 1 ")),
+            child: Text("Goto page 1")),
       ),
     );
   }
 }
 
 class Navigasyon1Page1 extends StatelessWidget {
+  int userId = 15;
   Navigasyon1Page1(this.userId);
-  int userId;
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop:checkStatus,
-
+      onWillPop: () {},
       child: Scaffold(
-        appBar: AppBar(title: Text("Page1,userId = $userId")),
+        appBar: AppBar(
+          title: Text(
+            "Page 1, userid = $userId",
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.deepPurple,
+        ),
         body: Center(
           child: ElevatedButton(
             onPressed: () {
-              Navigator.pop(context, "Kullanıcı bilgileri güncellendi");
+              Navigator.pop(context, "Kullanıcı bligileri güncellendi");
             },
-            child: Text("<<<Back"),),
+            child: Text("<<Back"),
+          ),
         ),
       ),
     );
   }
-
-Future<bool> CheckStatus(BuildContext context)async{
-  var shouldPop = await showDialog(
-    context: context, builder: (context))
-}
-
 }
