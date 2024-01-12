@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:w11derstekrari/namedroute.dart';
 import 'package:w11derstekrari/navigasyon1.dart';
 
 void main(List<String> args) {
@@ -15,7 +16,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
-      home: Navigasyon1MainPage(),
+      initialRoute:
+          "/", //uygulamanızın başlangıç ​​sayfasını belirlemek için kullanılan bir özelliktir
+      routes: {
+        "/": (context) => NamedRouteMain(),
+        "/NamedRoutePage1": (context) => NamedRoutePage1(),
+        "/NamedRoutePage2": (context) => NamedRoutePage2(),
+      },
     );
   }
 }

@@ -9,6 +9,7 @@ class Navigasyon1MainPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Home", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.deepPurple,
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: ElevatedButton(
