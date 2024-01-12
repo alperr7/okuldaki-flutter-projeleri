@@ -13,13 +13,29 @@ class NamedRouteMain extends StatelessWidget {
         ),
         body: Center(
           child: Column(
-            children: ElevatedButton(
-              onPressed: () {},
-              child: Text("Go to page 1"),
-              style: ButtonStyle(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/NamedRoutePage1");
+                },
+                child: Text("Go to page 1"),
+                style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
-                  foregroundColor: MaterialStateProperty.all(Colors.white)),
-            ),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/NamedRoutePage2");
+                },
+                child: Text("Go to page 2"),
+                style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(Colors.white),
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.deepPurple)),
+              ),
+            ],
           ),
         ));
   }
@@ -37,7 +53,9 @@ class NamedRoutePage1 extends StatelessWidget {
         ),
         body: Center(
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, "NamedRoutePage1");
+            },
             child: Text(
               "Go to page 1",
             ),
@@ -61,7 +79,9 @@ class NamedRoutePage2 extends StatelessWidget {
         ),
         body: Center(
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, "NamedRoutePage2");
+            },
             child: Text(
               "Go to page 2",
             ),
