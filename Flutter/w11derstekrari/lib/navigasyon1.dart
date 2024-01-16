@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 
+//MaybePop
+//CanPop
+
 class Navigasyon1MainPage extends StatelessWidget {
   int userId = 15;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home", style: TextStyle(color: Colors.white)),
-        backgroundColor: Colors.deepPurple,
-        automaticallyImplyLeading: false,
-      ),
+      appBar: AppBar(title: Text("Home")),
       body: Center(
         child: ElevatedButton(
             onPressed: () async {
@@ -22,6 +20,7 @@ class Navigasyon1MainPage extends StatelessWidget {
               ));
 
               print(Navigasyon1Page1.responsedData.toString() + ": Retrived");
+
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text(Navigasyon1Page1.responsedData.toString())));
             },
@@ -32,8 +31,8 @@ class Navigasyon1MainPage extends StatelessWidget {
 }
 
 class Navigasyon1Page1 extends StatelessWidget {
-  int userId = 15;
   Navigasyon1Page1(this.userId);
+  int userId;
   static String responsedData = "";
 
   @override
@@ -42,24 +41,18 @@ class Navigasyon1Page1 extends StatelessWidget {
       onWillPop: () => checkStatus(context),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
-            "Page 1, userid = $userId",
-            style: TextStyle(color: Colors.white),
-          ),
+          title: Text("Page 1, userId = $userId"),
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.deepPurple,
         ),
         body: Center(
           child: ElevatedButton(
-            onPressed: () async {
-              //Navigator.pop(context, "Kullanıcı bligileri güncellendi");
-              var isOk = await checkStatus(context);
-              if (isOk) {
-                Navigator.pop(context, "Kullanıcı bilgileri güncellendi");
-              }
-            },
-            child: Text("<<Back"),
-          ),
+              onPressed: () async {
+                var isOk = await checkStatus(context);
+                if (isOk) {
+                  Navigator.pop(context, "Kullanıcı bilgileri güncellendi");
+                }
+              },
+              child: Text("<<<Back")),
         ),
       ),
     );
@@ -70,7 +63,7 @@ class Navigasyon1Page1 extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text("Bilgileri eksiksiz girdiniz mi?"),
+          title: Text("Bilgileri Eksiksiz girdiniz mi?"),
           actions: [
             ElevatedButton(
                 onPressed: () {
@@ -82,11 +75,12 @@ class Navigasyon1Page1 extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop(false);
                 },
-                child: Text("Hayır")),
+                child: Text("Hayır"))
           ],
         );
       },
     );
+
     return shouldPop;
   }
 }

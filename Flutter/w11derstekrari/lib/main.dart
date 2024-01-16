@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:w11derstekrari/namedroute.dart';
-import 'package:w11derstekrari/navigasyon1.dart';
 import 'package:w11derstekrari/ongenerated_root.dart';
 
-void main(List<String> args) {
+import 'package:w11derstekrari/sidebar_menu.dart';
+
+void main() {
   runApp(const MyApp());
 }
 
@@ -13,29 +13,41 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "w11 app",
+      title: 'w11 app',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)
-          ),
-          home:OngeneratedRouteMain(),
-          onGenerateRoute: _onGenerateRoute(),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
+      // home: OngeneratedRouteMain(),
+      // onGenerateRoute: _onGenerateRoute,
 
-      //named route
-      // initialRoute:
-      //     "/", //uygulamanızın başlangıç ​​sayfasını belirlemek için kullanılan bir özelliktir
-      // routes: {
-      //   "/": (context) => NamedRouteMain(),
-      //   "/NamedRoutePage1": (context) => NamedRoutePage1(),
-      //   "/NamedRoutePage2": (context) => NamedRoutePage2(),
-      // },
+      /*named route*/
+      /*initialRoute: "/",
+      routes: {
+        "/"               : (context) => NamedRouteMain(),
+        "/NamedRoutePage1": (context) => NamedRoutePage1(),
+        "/NamedRoutePage2": (context) => NamedRoutePage2(),
+      },*/
+
+      initialRoute: "/",
+      routes: {
+        "/": (context) => SideBarMenuPageMain(),
+        "/Page1": (context) => Page1(),
+        "/Page2": (context) => Page2(),
+        "/Page3": (context) => Page3(),
+      },
     );
   }
-  
-Route<dynamic>? _onGenerateRoute(RouteSettings settings){
-  switch(settings.name){
-    case "/": MaterialPageRoute(builder: (context) => OngeneratedRouteMain())
-      break;
-    default:
+
+  Route<dynamic>? _onGenerateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case "/":
+        return MaterialPageRoute(builder: (context) => OngeneratedRouteMain());
+      case "/OngeneratedRoutePage1":
+        return MaterialPageRoute(builder: (context) => OngeneratedRoutePage1());
+      case "/OngeneratedRoutePage2":
+        return MaterialPageRoute(builder: (context) => OngeneratedRoutePage2());
+      default:
+    }
   }
 }

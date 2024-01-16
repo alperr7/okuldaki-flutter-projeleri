@@ -5,17 +5,24 @@ class OngeneratedRouteMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("NamedRouteMain"),
+          title: Text("NamedRouteMain", style: TextStyle(color: Colors.white)),
+          backgroundColor: Colors.deepPurple,
+          automaticallyImplyLeading: false,
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed("/OngeneratedRoutePage1");
-                  },
-                  child: Text("Goto page1")),
+                onPressed: () {
+                  Navigator.of(context).pushNamed("/OngeneratedRoutePage1");
+                },
+                child: Text("Goto page1"),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                ),
+              ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed("/OngeneratedRoutePage2");
@@ -37,6 +44,32 @@ class OngeneratedRouteMain extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ));
+  }
+}
+
+class OngeneratedRoutePage1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "OngeneratedRoutePage1",
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.deepPurple,
+        ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text("Goto OngeneratedRouteMain"),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
+              foregroundColor: MaterialStateProperty.all(Colors.white),
+            ),
           ),
         ));
   }
