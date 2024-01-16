@@ -60,7 +60,9 @@ class NamedRoutePage1 extends StatelessWidget {
               "Go to page 1",
             ),
             style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all(Colors.white)),
+              backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
+              foregroundColor: MaterialStateProperty.all(Colors.white),
+            ),
           ),
         ));
   }
@@ -87,6 +89,7 @@ class NamedRoutePage2 extends StatelessWidget {
             ),
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
+              foregroundColor: MaterialStateProperty.all(Colors.white),
             ),
           ),
         ));
