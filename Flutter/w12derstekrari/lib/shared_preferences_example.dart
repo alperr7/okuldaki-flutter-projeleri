@@ -1,5 +1,4 @@
-//Flutter'da "shared_preferences", uygulama içinde verileri kalıcı olarak saklamak ve
-//paylaşmak için kullanılan bir pakettir
+//Shared preferences example
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,65 +11,58 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  var _userFiledController = TextEditingController();
-  var _passwordFiledController = TextEditingController();
+  var _userFieldController = TextEditingController();
+  var _passwordFieldController = TextEditingController();
 
   bool isRememberMe = false;
 
-  _loadCredential() async {
-    // verileri okuma
-    //Şifre ve kullanıcı adı gibi gizli bilgileri  kimlikSakla
+  _loadCredentials() async {
     var db = await SharedPreferences.getInstance();
-
     setState(() {
-      _userFiledController.text = db.getString("username") ?? "";
-      // ?? ifade null sa sağına ne koyarsan onu döndürür
-
-      _passwordFiledController.text = db.getString("password") ?? "";
+      _userFieldController.text = db.getString("username") ?? "";
+      _passwordFieldController.text = db.getString("password") ?? "";
 
       isRememberMe = db.getBool("isRememberMe") ?? false;
     });
   }
 
-  _saveCredential() async {
-    //Şifre ve kullanıcı adı gibi gizli bilgileri  kimlikSakla
+  _saveCredentials() async {
     var db = await SharedPreferences.getInstance();
-
     if (isRememberMe) {
-      await db.setString("username", _userFiledController.text);
-      await db.setString("password", _passwordFiledController.text);
+      await db.setString("username", _userFieldController.text);
+      await db.setString("password", _passwordFieldController.text);
     } else {
       await db.remove("username");
       await db.remove("password");
     }
+
     await db.setBool("isRememberMe", isRememberMe);
   }
 
-  @override // widge yüklenirken ilk işleri burda yaparız
+  @override
   void initState() {
     super.initState();
 
-    _loadCredential(); // bu kişi yetkili mi ?
+    _loadCredentials();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Shared Pref.", style: TextStyle(color: Colors.white)),
-        backgroundColor: Colors.deepPurple,
+        title: Text("Shared Pref."),
       ),
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(children: [
           TextField(
-            controller: _userFiledController,
+            controller: _userFieldController,
             decoration: InputDecoration(labelText: "User Name"),
           ),
           TextField(
-            controller: _passwordFiledController,
-            decoration: InputDecoration(labelText: "Password"),
+            controller: _passwordFieldController,
             obscureText: true,
+            decoration: InputDecoration(labelText: "Password"),
           ),
           Row(
             children: [
@@ -85,30 +77,24 @@ class _LoginPageState extends State<LoginPage> {
             ],
           ),
           ElevatedButton(
-            onPressed: () async {
-              if (_userFiledController.text == "alper" &&
-                  _passwordFiledController.text == "123") {
-                var db = await SharedPreferences.getInstance();
+              onPressed: () async {
+                if (_userFieldController.text == "asecer" &&
+                    _passwordFieldController.text == "123") {
+                  var db = await SharedPreferences.getInstance();
 
-                if (isRememberMe) {
-                  db.setBool("isAuth", true); // bu kişi yetkili mi ?
-                }
+                  if (isRememberMe) {
+                    db.setBool("isAuth", true);
+                  }
 
-                Navigator.pushReplacement(context, MaterialPageRoute(
-                  builder: (context) {
-                    return HomePage();
-                  },
-                ));
-                //login ekranını yok eder yeni bir sayfa açar
-              } else {}
-              await _saveCredential();
-            },
-            child: Text("Login"),
-            style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.all(Colors.white),
-              backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
-            ),
-          ),
+                  Navigator.pushReplacement(context, MaterialPageRoute(
+                    builder: (context) {
+                      return HomePage();
+                    },
+                  ));
+                } else {}
+                await _saveCredentials();
+              },
+              child: Text("Login"))
         ]),
       ),
     );
@@ -117,7 +103,6 @@ class _LoginPageState extends State<LoginPage> {
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,15 +113,11 @@ class HomePage extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () async {
               var db = await SharedPreferences.getInstance();
-
-              db.setBool("isAuth", false); // bu kişi yetkili mi ?
+              db.setBool("isAuth", false);
 
               Navigator.pop(context);
             },
             child: Text("Exit"),
-            style: ButtonStyle(
-                foregroundColor: MaterialStatePropertyAll(Colors.white),
-                backgroundColor: MaterialStatePropertyAll(Colors.deepPurple)),
           ),
         ));
   }
