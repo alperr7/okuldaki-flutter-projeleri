@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:w12derstekrari/shared_preferences_example.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+import 'shared_preferences_example.dart';
+
+bool isAuth = false;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // veritabanı bağlantısını garantilemek için yazarız
+
+  var db = await SharedPreferences.getInstance();
+
+  isAuth = db.getBool("isAuth") ?? false;
+
   runApp(const MyApp());
 }
 
@@ -13,8 +23,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Demo",
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
-      home: LoginPage(),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home: isAuth ? HomePage() : LoginPage(),
     );
   }
 }

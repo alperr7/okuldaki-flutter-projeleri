@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
     var db = await SharedPreferences.getInstance();
 
     setState(() {
-      _userFiledController.text = db.getString("usarname") ?? "";
+      _userFiledController.text = db.getString("username") ?? "";
       // ?? ifade null sa sağına ne koyarsan onu döndürür
 
       _passwordFiledController.text = db.getString("password") ?? "";
@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
 
-    _loadCredential();
+    _loadCredential(); // bu kişi yetkili mi ?
   }
 
   @override
@@ -62,40 +62,82 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: Padding(
         padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
-            TextField(
-              controller: _userFiledController,
-              decoration: InputDecoration(labelText: "User Name"),
-            ),
-            TextField(
-              controller: _passwordFiledController,
-              decoration: InputDecoration(labelText: "Password"),
-              obscureText: true,
-            ),
-            Row(
-              children: [
-                Checkbox(
-                  value: isRememberMe,
-                  onChanged: (value) {
-                    isRememberMe = value!;
-                    setState(() {});
-                  },
-                ),
-                Text("Remember me"),
-              ],
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text("Login"),
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all(Colors.white),
-                backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
+        child: Column(children: [
+          TextField(
+            controller: _userFiledController,
+            decoration: InputDecoration(labelText: "User Name"),
+          ),
+          TextField(
+            controller: _passwordFiledController,
+            decoration: InputDecoration(labelText: "Password"),
+            obscureText: true,
+          ),
+          Row(
+            children: [
+              Checkbox(
+                value: isRememberMe,
+                onChanged: (value) {
+                  isRememberMe = value!;
+                  setState(() {});
+                },
               ),
+              Text("Remember me")
+            ],
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              if (_userFiledController.text == "alper" &&
+                  _passwordFiledController.text == "123") {
+                var db = await SharedPreferences.getInstance();
+
+                if (isRememberMe) {
+                  db.setBool("isAuth", true); // bu kişi yetkili mi ?
+                }
+
+                Navigator.pushReplacement(context, MaterialPageRoute(
+                  builder: (context) {
+                    return HomePage();
+                  },
+                ));
+                //login ekranını yok eder yeni bir sayfa açar
+              } else {}
+              await _saveCredential();
+            },
+            child: Text("Login"),
+            style: ButtonStyle(
+              foregroundColor: MaterialStateProperty.all(Colors.white),
+              backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
             ),
-          ],
-        ),
+          ),
+        ]),
       ),
     );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Home"),
+        ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () async {
+              var db = await SharedPreferences.getInstance();
+
+              db.setBool("isAuth", false); // bu kişi yetkili mi ?
+
+              Navigator.pop(context);
+            },
+            child: Text("Exit"),
+            style: ButtonStyle(
+                foregroundColor: MaterialStatePropertyAll(Colors.white),
+                backgroundColor: MaterialStatePropertyAll(Colors.deepPurple)),
+          ),
+        ));
   }
 }
