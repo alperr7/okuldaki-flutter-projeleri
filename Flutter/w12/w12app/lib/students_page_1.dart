@@ -78,7 +78,7 @@ class _StudentPage1State extends State<StudentPage1> {
 }
 
 class AddOrUpdateStudentPage extends StatelessWidget {
-  AddOrUpdateStudentPage([Student? student = null]) {
+  AddOrUpdateStudentPage([Student? student]) {
     this.student = student;
   }
 
@@ -113,7 +113,7 @@ class AddOrUpdateStudentPage extends StatelessWidget {
               decoration: InputDecoration(labelText: "Dep Id")),
           ElevatedButton(
               onPressed: () async {
-                if (student == null) {
+                if (student != null) {
                   await repository.addStudent(Student(
                       firstName: firstNameController.text,
                       lastName: lastNameController.text,
