@@ -1,0 +1,328 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "hesapmakinesi",
+            "cwd": "Flutter\\hesapmakinesi",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "hesapmakinesi (profile mode)",
+            "cwd": "Flutter\\hesapmakinesi",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "hesapmakinesi (release mode)",
+            "cwd": "Flutter\\hesapmakinesi",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w06derstekrari",
+            "cwd": "Flutter\\w06derstekrari",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w06derstekrari (profile mode)",
+            "cwd": "Flutter\\w06derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w06derstekrari (release mode)",
+            "cwd": "Flutter\\w06derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w07derstekrari",
+            "cwd": "Flutter\\w07derstekrari",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w07derstekrari (profile mode)",
+            "cwd": "Flutter\\w07derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w07derstekrari (release mode)",
+            "cwd": "Flutter\\w07derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w09derstekrari",
+            "cwd": "Flutter\\w09derstekrari",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w09derstekrari (profile mode)",
+            "cwd": "Flutter\\w09derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w09derstekrari (release mode)",
+            "cwd": "Flutter\\w09derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w10derstekrari",
+            "cwd": "Flutter\\w10derstekrari",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w10derstekrari (profile mode)",
+            "cwd": "Flutter\\w10derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w10derstekrari (release mode)",
+            "cwd": "Flutter\\w10derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w11derstekrari",
+            "cwd": "Flutter\\w11derstekrari",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w11derstekrari (profile mode)",
+            "cwd": "Flutter\\w11derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w11derstekrari (release mode)",
+            "cwd": "Flutter\\w11derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w12derstekrari",
+            "cwd": "Flutter\\w12derstekrari",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w12derstekrari (profile mode)",
+            "cwd": "Flutter\\w12derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w12derstekrari (release mode)",
+            "cwd": "Flutter\\w12derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w13derstekrari",
+            "cwd": "Flutter\\w13derstekrari",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w13derstekrari (profile mode)",
+            "cwd": "Flutter\\w13derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w13derstekrari (release mode)",
+            "cwd": "Flutter\\w13derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w14derstekrari",
+            "cwd": "Flutter\\w14derstekrari",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w14derstekrari (profile mode)",
+            "cwd": "Flutter\\w14derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w14derstekrari (release mode)",
+            "cwd": "Flutter\\w14derstekrari",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flutter_1",
+            "cwd": "Flutter\\w06\\flutter_1",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutter_1 (profile mode)",
+            "cwd": "Flutter\\w06\\flutter_1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flutter_1 (release mode)",
+            "cwd": "Flutter\\w06\\flutter_1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "fluller07_01",
+            "cwd": "Flutter\\w07\\fluller07_01",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "fluller07_01 (profile mode)",
+            "cwd": "Flutter\\w07\\fluller07_01",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "fluller07_01 (release mode)",
+            "cwd": "Flutter\\w07\\fluller07_01",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flutter_application_1",
+            "cwd": "Flutter\\w09\\flutter_application_1",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutter_application_1 (profile mode)",
+            "cwd": "Flutter\\w09\\flutter_application_1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flutter_application_1 (release mode)",
+            "cwd": "Flutter\\w09\\flutter_application_1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w10_app1",
+            "cwd": "Flutter\\w10\\w10_app1",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w10_app1 (profile mode)",
+            "cwd": "Flutter\\w10\\w10_app1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w10_app1 (release mode)",
+            "cwd": "Flutter\\w10\\w10_app1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w12app",
+            "cwd": "Flutter\\w12\\w12app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w12app (profile mode)",
+            "cwd": "Flutter\\w12\\w12app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w12app (release mode)",
+            "cwd": "Flutter\\w12\\w12app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w13app",
+            "cwd": "Flutter\\w13\\w13app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w13app (profile mode)",
+            "cwd": "Flutter\\w13\\w13app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w13app (release mode)",
+            "cwd": "Flutter\\w13\\w13app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "w14app",
+            "cwd": "Flutter\\W14\\w14app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "w14app (profile mode)",
+            "cwd": "Flutter\\W14\\w14app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "w14app (release mode)",
+            "cwd": "Flutter\\W14\\w14app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
