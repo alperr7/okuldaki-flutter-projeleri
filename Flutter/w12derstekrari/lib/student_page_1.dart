@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:w12derstekrari/schoolrepository1.dart';
+import 'package:w12derstekrari/schoolrepository2.dart';
 
 import 'package:w12derstekrari/student.dart';
 
@@ -11,11 +12,11 @@ class StudentPage1 extends StatefulWidget {
 }
 
 class _StudentPage1State extends State<StudentPage1> {
-  var repository = SchoolRepository1();
+  var repository = SchoolRepository2();
   List<Student> _students = [];
 
   _loadStudents() async {
-    _students = await repository.getStudents();
+    _students = await repository.getStudent();
     setState(() {});
   }
 
