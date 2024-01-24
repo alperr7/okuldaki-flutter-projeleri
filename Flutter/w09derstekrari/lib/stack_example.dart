@@ -10,6 +10,7 @@ class StackExample extends StatelessWidget {
       ),
       body: Center(
         child: Stack(
+          //içerisinde örtüşen elemanlar eklemek için kullanılır
           children: [
             Image.network(
               "https://media.licdn.com/dms/image/D4D03AQHiCg_YnqC4Gw/profile-displayphoto-shrink_800_800/0/1701495607424?e=1708560000&v=beta&t=DbfVyItjZErC0E5JVajNnWAcL7Ap3xmz4svvHwauvn8",
@@ -17,7 +18,11 @@ class StackExample extends StatelessWidget {
               height: 350,
               fit: BoxFit.cover,
             ),
-            Positioned(left: 0, top: 150, child: Text("User Name: Alperr77")),
+            Positioned(
+                left: 0,
+                top: 150,
+                child: Text(
+                    "User Name: Alperr77")), //Stack içindeki diğer elemanların konumunu belirler
             Positioned(top: 0, right: 0, child: Text("Address:Alperr77")),
             Positioned(
                 bottom: 5,

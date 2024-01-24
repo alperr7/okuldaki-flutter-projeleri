@@ -8,11 +8,13 @@ class AnaMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+        // widget'ı, yan menüyü temsil eder
         child: Padding(
       padding: const EdgeInsets.all(8.0),
       child: ListView(
         children: [
           DrawerHeader(
+            //yan menü başlığını temsil eder.
             child: Text(
               "Ana Menü",
               style: TextStyle(color: Colors.white, fontSize: 36),

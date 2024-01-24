@@ -22,7 +22,8 @@ class ExpandedExamplePage extends StatelessWidget {
       body: Column(children: [
         Text("Without Expanded", style: TextStyle(fontSize: 20)),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment
+              .spaceEvenly, //çocuk widget'lar arasında eşit boşluk bırakarak düzenleme yapar
           children: [
             Container(width: 100, height: 100, color: Colors.red),
             Container(width: 100, height: 100, color: Colors.yellow),
@@ -36,7 +37,8 @@ class ExpandedExamplePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Expanded(
-                flex: 1,
+                //Bir widget'ı belirli bir oranda genişletmeye (expand) olanak tanır.
+                flex: 1, // özelliği, widget'ın genişleme oranını belirler
                 child: Container(width: 100, height: 100, color: Colors.red)),
             Expanded(
                 flex: 2,

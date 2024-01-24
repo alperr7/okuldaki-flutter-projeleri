@@ -11,10 +11,15 @@ class DropdownMenuExample extends StatefulWidget {
 
 class _DropdownMenuExampleState extends State<DropdownMenuExample> {
   Map<String, Color> colors = {
-    "Kırmızı": Colors.red,    "Sarı": Colors.yellow,
-    "Mavi": Colors.blue,    "Siyah": Colors.black,    "Beyaz": Colors.white
+    "Kırmızı": Colors.red,
+    "Sarı": Colors.yellow,
+    "Mavi": Colors.blue,
+    "Siyah": Colors.black,
+    "Beyaz": Colors.white
   };
-  Color selectedColor = Colors.white;
+  Color selectedColor = Colors
+      .white; //değişkenleri, kullanıcının seçtiği rengin ve renk adının saklanması
+  // için kullanılır. Başlangıçta "Beyaz" renk seçilmiştir.
   String selectedItem = "Beyaz";
 
   @override
@@ -25,6 +30,7 @@ class _DropdownMenuExampleState extends State<DropdownMenuExample> {
         color: colors[selectedItem],
         child: Center(
           child: DropdownButton<String>(
+            //widget'ı, bir açılır menü oluşturur
             value: selectedItem,
             items: colors.keys.map(
               (String item) {

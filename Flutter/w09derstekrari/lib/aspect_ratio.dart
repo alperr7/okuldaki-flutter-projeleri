@@ -11,6 +11,7 @@ class AspectRatioExample extends StatelessWidget {
       body: Column(
         children: [
           AspectRatio(
+            //Bu widget, belirli bir en boy oranına sahip bir alan oluşturur.
             aspectRatio: 16 / 9,
             child: Container(
               color: Colors.red,

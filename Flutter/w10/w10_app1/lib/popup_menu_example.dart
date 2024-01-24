@@ -24,9 +24,10 @@ class _PopupMenuExampleState extends State<PopupMenuExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("DropdownMenuExample"),
+        title: Text("PopupMenuExample"),
         actions: [
           PopupMenuButton(
+            //kullanıcının bir renk seçebileceği ve seçilen rengin arka plan rengini güncellediği bir uygulamayı temsil eder
             onSelected: (_selectedItem) {
               setState(() {
                 selectedItem = _selectedItem;

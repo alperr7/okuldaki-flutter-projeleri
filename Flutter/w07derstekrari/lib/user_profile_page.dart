@@ -9,7 +9,6 @@ class MyAppUserProfile extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "User Profile",
-      theme: ThemeData(primaryColor: Colors.blue),
       home: UserProfileScreen(),
     );
   }
@@ -21,16 +20,24 @@ class UserProfileScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-          colors: [Colors.yellow, Colors.blue],
-          begin: Alignment.topLeft,
+            gradient: //gradient (geçiş) arka plan
+                LinearGradient(
+          colors: [
+            Colors.yellow,
+            Colors.blue
+          ], //gradient'in başlangıcından bitişine doğru geçiş yapacak iki renk belirlenmiştir
+          begin: Alignment
+              .topLeft, //Alignment sınıfı, Flutter'da bir noktanın veya bir vektörün belirli bir hedefe veya konuma göre nasıl hizalanacağını belirlemek için kullanılır
           end: Alignment.bottomRight,
         )),
+
+        //Column widget'ını kullanarak dikey bir düzen içindeki çocuk widget'ları hizalamak için mainAxisAlignment özelliğini kullanmaktadır.
         child: Center(
           child: Column(
             mainAxisAlignment:
                 MainAxisAlignment.center, //ekranın ortasına almak için
             children: [
+              //genellikle kullanıcı profilleri veya resimleri gibi yuvarlak şekilde görüntülenmesi gereken resimleri temsil etmek için kullanılan bir widget'tır.
               CircleAvatar(
                 radius: 100,
                 backgroundImage: NetworkImage(
@@ -50,9 +57,12 @@ class UserProfileScreen extends StatelessWidget {
                 height: 20,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                //çocuk widget'ların yatay eksendeki hizalamasını belirler
+                mainAxisAlignment: MainAxisAlignment
+                    .spaceAround, //çocuk widget'ları arasında eşit boşluk bırakarak düzenleme yapar
                 children: [
                   InkWell(
+                    //InkWell, dokunma (tıklama) işlemlerini algılamak için kullanılan bir widget'tır
                     onTap: () {
                       print("Message icon was clicked");
                     },

@@ -17,10 +17,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Week 9",
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors
+                .deepPurple), //fonksiyonu, belirli bir başlangıç (seed) rengi üzerinden
+        //bir renk şemasını oluşturmak için kullanılır.
+        useMaterial3:
+            true, //Bu özellik, Material 3 tasarımının kullanılıp kullanılmayacağını belirtir
       ),
-      home: RegistrationForm(),
+      home: WrapExample(),
     );
   }
 }

@@ -13,7 +13,9 @@ class ConstrainedBoxExample extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           ConstrainedBox(
-            constraints: BoxConstraints(
+            //içeriğinin belirli boyut sınırları içinde kalmasını sağlar.
+            constraints: //constraints parametresi, içeriğin minimum ve maksimum boyutlarını belirler.
+                BoxConstraints(
               minHeight: 50,
               maxHeight: 150,
               maxWidth: 50,

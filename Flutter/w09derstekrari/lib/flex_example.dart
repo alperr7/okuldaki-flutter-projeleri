@@ -14,6 +14,7 @@ class FlexExample extends StatelessWidget {
       body: Column(
         children: [
           Flexible(
+            //esnek bir alan oluşturur ve içerisine yerleştirilen widget'ların belirli bir esneklik oranına göre genişlemesini sağlar.
             flex: 75,
             child: Container(
               color: Colors.red,
